@@ -1,0 +1,87 @@
+/* vd-card.css - simple responsive video card */
+.vd-card {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 14px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #222;
+}
+
+.vd-card .vd-head {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.vd-card .vd-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 6px 0;
+}
+
+.vd-card .vd-desc {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.vd-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 */
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+}
+
+.vd-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #000;
+}
+
+.vd-poster {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+}
+
+.vd-playbtn {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transition: transform .15s ease;
+}
+
+.vd-playbtn:hover { transform: scale(1.06); }
+
+.vd-playbtn:after{
+  content: "";
+  display: inline-block;
+  margin-left: 4px;
+  border-style: solid;
+  border-width: 12px 0 12px 18px;
+  border-color: transparent transparent transparent rgba(0,0,0,0.85);
+}
+
+/* small responsive tweaks */
+@media (max-width:480px){
+  .vd-card { margin: 12px; padding: 10px; }
+  .vd-playbtn { width: 56px; height: 56px; }
+  .vd-title { font-size: 16px; }
+}
